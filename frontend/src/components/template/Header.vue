@@ -58,6 +58,11 @@ export default {
         text-decoration: none;
     }
 
+    .title a:hover {
+        color: #FFF;
+        text-decoration: none;
+    }
+
     header.header > a.toggle {
         width: 60px;
         height: 100%;

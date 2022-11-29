@@ -2,16 +2,17 @@
     <div class="articles-by-category">
         <PageTitle icon="fa fa-folder-o"
             :main="category.name" sub="Categoria" />
-        <!-- <ul>
+        <ul>
             <li v-for="article in articles" :key="article.id">
-                <ArticleItem :article="article" />
+                {{ article.name }}
+                <!-- <ArticleItem :article="article" /> -->
             </li>
-        </ul> -->
-        <!-- <div class="load-more">
+        </ul>
+        <div class="load-more">
             <button v-if="loadMore"
                 class="btn btn-lg btn-outline-primary"
                 @click="getArticles">Carregar Mais Artigos</button>
-        </div> -->
+        </div>
     </div>
 </template>
 
@@ -38,15 +39,15 @@ export default {
             const url = `${baseApiUrl}/categories/${this.category.id}`
             axios(url).then(res => this.category = res.data)
         },
-        // getArticles() {
-        //     const url = `${baseApiUrl}/categories/${this.category.id}/articles?page=${this.page}`
-        //     axios(url).then(res => {
-        //         this.articles = this.articles.concat(res.data)
-        //         this.page++
+        getArticles() {
+            const url = `${baseApiUrl}/categories/${this.category.id}/articles?page=${this.page}`
+            axios(url).then(res => {
+                this.articles = this.articles.concat(res.data)
+                this.page++
 
-        //         if(res.data.length === 0) this.loadMore = false
-        //     })
-        // }
+                if(res.data.length === 0) this.loadMore = false
+            })
+        }
     },
     // watch: {
     //     $route(to) {
@@ -62,13 +63,13 @@ export default {
     mounted() {
         this.category.id = this.$route.params.id
         this.getCategory()
-        // this.getArticles()
+        this.getArticles()
     }
 }
 </script>
 
 <style>
-    /* .articles-by-category ul {
+    .articles-by-category ul {
         list-style-type: none;
         padding: 0px;
     }
@@ -78,5 +79,5 @@ export default {
         flex-direction: column;
         align-items: center;
         margin-top: 25px;
-    } */
+    }
 </style>

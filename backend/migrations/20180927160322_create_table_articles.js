@@ -8,11 +8,11 @@ exports.up = function(knex, Promise) {
         table.binary('content').notNull()
         table.integer('userId').references('id')
             .inTable('users').notNull()
-        table.integer('caregoryId').references('id')
+        table.integer('categoryId').references('id')
             .inTable('categories').notNull()
-      })
+    })
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable('articles')
+    return knex.schema.dropTable('articles')
 };

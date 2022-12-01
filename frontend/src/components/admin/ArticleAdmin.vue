@@ -1,6 +1,5 @@
 <template>
     <div class="article-admin">
-        <h1>Artigo Componente</h1>
         <b-form>
             <input id="article-id" type="hidden" v-model="article.id" />
             <b-form-group label="Nome:" label-for="article-name">

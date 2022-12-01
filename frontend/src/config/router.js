@@ -20,23 +20,19 @@ const routes = [{
     path: '/admin',
     component: AdminPages,
     meta: { requiresAdmin: true }
-}
-, {
+}, {
     name: 'articlesByCategory',
     path: '/categories/:id/articles',
     component: ArticlesByCategory
-},
-{
+}, {
     name: 'articleById',
     path: '/articles/:id',
     component: ArticleById
-},
-{
+}, {
     name: 'auth',
     path: '/auth',
     component: Auth
-}
-]
+}]
 
 const router = new VueRouter({
     mode: 'history',

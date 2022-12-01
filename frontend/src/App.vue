@@ -1,8 +1,8 @@
 <template>
 	<div id="app" :class="{'hide-menu': !isMenuVisible || !user}">
 		<Header title="Cod3r - Base de Conhecimento" 
-		:hideToggle="!user"
-		:hideUserDropdown="!user" />
+			:hideToggle="!user"
+			:hideUserDropdown="!user" />
 		<Menu v-if="user" />
 		<Loading v-if="validatingToken" />
 		<Content v-else />
@@ -11,7 +11,6 @@
 </template>
 
 <script>
-
 import axios from "axios"
 import { baseApiUrl, userKey } from "@/global"
 import { mapState } from "vuex"

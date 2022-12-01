@@ -1,6 +1,5 @@
 <template>
     <div class="category-admin">
-        <h1>Categoria Componente</h1>
         <b-form>
             <input id="category-id" type="hidden" v-model="category.id" />
             <b-form-group label="Nome:" label-for="category-name">

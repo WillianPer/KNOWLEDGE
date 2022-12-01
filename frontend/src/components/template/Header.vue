@@ -31,7 +31,6 @@ export default {
             this.$store.commit('toggleMenu')
         }
     }
-    
 }
 </script>
 

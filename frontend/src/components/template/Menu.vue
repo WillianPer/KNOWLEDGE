@@ -1,4 +1,3 @@
-
 <template>
     <aside class="menu" v-show="isMenuVisible">
         <div class="menu-filter">

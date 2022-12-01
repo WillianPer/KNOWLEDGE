@@ -36,10 +36,10 @@ export default {
 </script>
 
 <style>
-.user-dropdown {
-    position: relative;
-    height: 100%;
-}
+    .user-dropdown {
+        position: relative;
+        height: 100%;
+    }
 
     .user-button {
         display: flex;
